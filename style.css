@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Vazirmatn";
+}
+
+body {
+    background: linear-gradient(131deg, #000000, #161616);
+    height: 100vh;
+    color: white;
+    gap: 2rem;
+}
+
+.d-flex-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #E0F7FA;
+    width: 600px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    box-shadow: 0 4px 18px rgba(255, 255, 255, 0.372);
+    animation: myAnim 1s ease-in 0s 1 normal forwards;
+}
+
+.container-profile-box {
+    justify-content: space-evenly;
+    position: relative;
+}
+
+h2 {
+    animation: myAnim 1s ease-in 0s 1 normal forwards;
+}
+
+h3 {
+    color: #141127;
+}
+
+.container-profile-box::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    background: #161616;
+    right: 0;
+}
+
+.user-profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+}
+
+.container-profile-detail-box {
+    align-items: start;
+    padding: 2rem;
+}
+
+.container-profile-detail-box>ul {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 2rem;
+    margin-left: 1rem;
+}
+
+.container-profile-detail-box>ul>li {
+    font-weight: normal;
+    color: #141127;
+    list-style-type: none;
+    display: flex;
+    gap: 8px;
+    transition: all 500ms ease;
+}
+
+.container-profile-detail-box>ul>li:hover {
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.container-profile-detail-box>ul>li>span {
+    font-weight: bolder;
+}
+
+.container-profile-main-box {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    position: relative;
+    display: grid;
+    grid-template-rows: 74% 26%;
+}
+
+.container-profile-main-box::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    background: #161616;
+    top: 0;
+}
+
+.profile-select-main-box {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.select-box {
+    border-right: #161616 solid 4px;
+    position: relative;
+}
+
+.select-box::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    background: #161616;
+    top: 0;
+}
+
+.last-select-box {
+    border-right: none;
+}
+
+.container-profile-box-show {
+    width: 100%;
+    height: 100%;
+
+}
+
+svg {
+    width: 50px;
+    height: 50px;
+}
+
+.generat-btn {
+    background: linear-gradient(131deg, #000000, #2b2b2b);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 500ms ease;
+    animation: myAnim 1s ease-in 0s 1 normal forwards;
+
+    &:hover {
+        background: linear-gradient(328deg, #000000, #141127);
+    }
+}
+
+.active {}
+
+.active>svg {
+    animation: attention 1s linear 0s 1 normal forwards;
+}
+
+.active::after {
+    display: none;
+}
+
+/* animations */
+@keyframes myAnim {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes attention {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* responsive */
+@media screen and (max-width:665px) {
+    .container {
+        width: 450px;
+    }
+}
+
+@media screen and (max-width:481px) {
+    .container {
+        width: 430px;
+    }
+}
+
+@media screen and (max-width:459px) {
+    .container {
+        width: 400px;
+    }
+
+    .user-profile-image {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media screen and (max-width:423px) {
+    .container {
+        width: 380px;
+    }
+
+    svg {
+        width: 40px;
+    }
+}
+
+@media screen and (max-width:411px) {
+    .container {
+        width: 360px;
+        height: 490px;
+    }
+
+    .container-profile-detail-box>ul>li {
+        gap: 6px;
+        font-size: 14px;
+    }
+
+}
+
+@media screen and (max-width:375px) {
+    .container {
+        width: 340px;
+    }
+
+    .user-profile-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+}
